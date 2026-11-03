@@ -167,19 +167,19 @@
   function bandFor(score) {
     if (score < 4) {
       return {
-        label: "Signal: strained",
-        context: "Your responses suggest elevated strain right now. Small shifts in sleep or screen time can go a long way.",
+        label: "Take a gentle moment",
+        context: "Your answers may reflect a tougher stretch. This score isn't a diagnosis or a judgment. Consider taking one small step today, like resting, stepping away from your screen, or talking with someone you trust.",
       };
     }
     if (score < 7) {
       return {
-        label: "Signal: balanced",
-        context: "Your rhythm looks fairly steady, with some room to recover and reset.",
+        label: "A chance to reset",
+        context: "Some parts of your routine may be supporting you, while others could use attention. Try one small change that feels manageable, and check in with yourself again later.",
       };
     }
     return {
-      label: "Signal: strong",
-      context: "Your habits point to a well-supported, resilient baseline. Keep it up.",
+      label: "Keep nurturing what works",
+      context: "Your answers suggest some of your current habits may be working well for you. Keep making space for them, and remember it's always okay to ask for support at any score.",
     };
   }
 
