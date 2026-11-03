@@ -1,11 +1,12 @@
 import joblib
 import pandas as pd
+from pathlib import Path
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 from typing import Literal
 from fastapi.middleware.cors import CORSMiddleware
 
-model = joblib.load('Mental_Health_Model.pkl')
+model = joblib.load(Path(__file__).with_name('Mental_Health_Model.pkl'))
 top_countries = ['Other','India','USA','Canada','Australia','UK','Germany','Mexico','Turkey','France']
 
 app = FastAPI()
@@ -44,9 +45,9 @@ class PredictionResponse(BaseModel):
 
 
 
-@app.get('/')
+@app.get('/health')
 def greet():
-    return {'Welcome to Sheryians AI School Guys'}
+    return {'status': 'ok'}
 
 
 @app.post('/predict', response_model=PredictionResponse) #6.77777
@@ -71,3 +72,6 @@ def predict(data: StudentData):
 
    prediction = model.predict(input_row)[0] #6.77
    return PredictionResponse(predicted_mental_health_score=round(float(prediction),2))
+
+
+app.frontend("/", directory="frontend")

@@ -4,7 +4,7 @@
   const isLocalPage = ["localhost", "127.0.0.1"].includes(window.location.hostname);
   const API_BASE = isLocalPage
     ? "http://127.0.0.1:2200"
-    : "https://mansik-santulan-score.onrender.com";
+    : window.location.origin;
 
   const form = document.getElementById("predict-form");
   const submitBtn = document.getElementById("submit-btn");
