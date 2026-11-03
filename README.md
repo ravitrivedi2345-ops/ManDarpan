@@ -17,3 +17,7 @@ python -m http.server 8000 --directory frontend
 Open http://localhost:8000. The frontend calls the local API at port 2200.
 On Vercel, the FastAPI app serves predictions and the frontend is delivered
 from the same deployment.
+
+## Deploy
+
+Run `vercel --prod` from the project root to deploy the frontend and API together.
